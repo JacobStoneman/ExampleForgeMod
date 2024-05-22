@@ -1,6 +1,8 @@
 {
   "item.test_mod.sapphire": "Sapphire",
   "item.test_mod.raw_sapphire": "Raw Sapphire",
+  "item.test_mod.strawberry": "Strawberry",
+  "item.test_mod.pine_cone": "Pine Cone",
   "item.test_mod.metal_detector": "Metal Detector",
 
   "block.test_mod.sapphire_block": "Block of Sapphire",
@@ -8,5 +10,7 @@
   "block.test_mod.sapphire_ore": "Sapphire Ore",
   "block.test_mod.sound_block": "Sound Block",
 
-  "creativetab.test_tab": "Test Tab"
+  "creativetab.test_tab": "Test Tab",
+
+  "tooltip.test_mod:metal_detector": "Finds valuables underground"
 }

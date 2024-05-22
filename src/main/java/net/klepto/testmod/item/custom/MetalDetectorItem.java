@@ -1,5 +1,6 @@
 package net.klepto.testmod.item.custom;
 
+import net.klepto.utils.ModTags;
 import net.klepto.utils.Output;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
@@ -7,10 +8,15 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class MetalDetectorItem extends Item {
 
@@ -37,7 +43,6 @@ public class MetalDetectorItem extends Item {
 
             if(!foundBlock) {
                 Output.systemMessage(player, "No valuables found");
-                //player.sendSystemMessage(Component.literal("No valuables found"));
             }
         }
 
@@ -46,12 +51,17 @@ public class MetalDetectorItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("tooltip.test_mod:metal_detector"));
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+    }
+
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block block) {
         Output.systemMessage(player, "Found " + I18n.get(block.getDescriptionId()) + " at " + Output.formatCoordinates(blockPos.getX(), blockPos.getY(), blockPos.getZ()));
-//        player.sendSystemMessage(Component.literal("Found " + I18n.get(block.getDescriptionId()) + " at (" + blockPos.getX() + ", " + blockPos.getY() + ", " + blockPos.getZ() + ")"));
     }
 
     private boolean isValuableBlock(BlockState state) {
-        return state.is(Blocks.IRON_ORE);
+        return state.is(ModTags.Blocks.METAL_DETECTOR_VALUABLES);
     }
 }

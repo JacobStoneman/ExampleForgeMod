@@ -1,0 +1,13 @@
+// 1.20.1	2024-05-22T19:41:35.6675583	Block States: test_mod
+e5d5067b0029aa7edcae1d66bbada0b06058f4f1 assets/test_mod/blockstates/raw_sapphire_block.json
+ff1c099eb2a72c5190a2c09d36a71f5b8c7e2b23 assets/test_mod/blockstates/sapphire_block.json
+17706c50dafe0a9934cfd291853c9346f7ff8158 assets/test_mod/blockstates/sapphire_ore.json
+e8f1fd2d296634d6ec1aead54bc643a824f0454c assets/test_mod/blockstates/sound_block.json
+1361c79376cf15dffc32816ba277da7fa933990e assets/test_mod/models/block/raw_sapphire_block.json
+264b9dc7e32e44d6c7e71226377cb04b7a8f8ec7 assets/test_mod/models/block/sapphire_block.json
+24e9dbdd8d1803f7c3f383713b1a5c163f3ab3ee assets/test_mod/models/block/sapphire_ore.json
+ac88ec2ec233109a708f4305a33b01c31d853461 assets/test_mod/models/block/sound_block.json
+1ebae7a4ffa38f163ab4393fbfad5bac860f19ac assets/test_mod/models/item/raw_sapphire_block.json
+f2b5ace47e01fe7301363aa96dd5f07b210673ee assets/test_mod/models/item/sapphire_block.json
+1809e5c710d658cd770d7335a924d7cb6e6ef2d6 assets/test_mod/models/item/sapphire_ore.json
+7ddf8c087b96ffad8871fc41571652019605a9af assets/test_mod/models/item/sound_block.json

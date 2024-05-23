@@ -1,6 +1,6 @@
-package net.klepto.testmod.datagen;
+package net.klepto.utils.datagen;
 
-import net.klepto.testmod.datagen.loot.ModBlockLootTables;
+import net.klepto.utils.datagen.loot.ModBlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;

@@ -1,7 +1,10 @@
-package net.klepto.testmod.datagen;
+package net.klepto.utils.datagen;
 
-import net.klepto.testmod.block.ModBlocks;
-import net.klepto.testmod.item.ModItems;
+import net.klepto.utils.ModConfig;
+import net.klepto.utils.recipes.CookingRecipe;
+import net.klepto.utils.recipes.RecipeDefinition;
+import net.klepto.utils.recipes.ShapedRecipe;
+import net.klepto.utils.recipes.ShapelessRecipe;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -15,8 +18,6 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeGenerator extends RecipeProvider implements IConditionBuilder {
-    private static final List<ItemLike> SAPPHIRE_SMELTABLES = List.of(ModItems.RAW_SAPPHIRE.get());
-
     public ModRecipeGenerator(PackOutput pOutput) {
         super(pOutput);
     }
@@ -41,33 +42,31 @@ public class ModRecipeGenerator extends RecipeProvider implements IConditionBuil
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        oreBlasting(consumer, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
-        oreSmelting(consumer, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
+        for(CookingRecipe cookingRecipe : ModConfig.COOKING_RECIPES) {
+            switch (cookingRecipe.cookingMethod) {
+                case BLASTING -> oreBlasting(consumer, cookingRecipe.itemLikes, cookingRecipe.recipeCategory, cookingRecipe.result, cookingRecipe.xp, cookingRecipe.cookingTime, cookingRecipe.group);
+                case SMELTING -> oreSmelting(consumer, cookingRecipe.itemLikes, cookingRecipe.recipeCategory, cookingRecipe.result, cookingRecipe.xp, cookingRecipe.cookingTime, cookingRecipe.group);
+            }
+        }
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())
-                .pattern("SSS")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S', ModItems.SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
-                .save(consumer);
+        for(ShapelessRecipe shapelessRecipe : ModConfig.SHAPELESS_RECIPES) {
+            ShapelessRecipeBuilder.shapeless(shapelessRecipe.recipeCategory, shapelessRecipe.result, shapelessRecipe.count)
+                    .requires(shapelessRecipe.requires)
+                    .unlockedBy(getHasName(shapelessRecipe.unlockedBy), has(shapelessRecipe.unlockedBy))
+                    .save(consumer);
+        }
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
-                .requires(ModBlocks.SAPPHIRE_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.SAPPHIRE_BLOCK.get()), has(ModBlocks.SAPPHIRE_BLOCK.get()))
-                .save(consumer);
+        for(ShapedRecipe shapedRecipe : ModConfig.SHAPED_RECIPES) {
+            ShapedRecipeBuilder newRecipe = ShapedRecipeBuilder.shaped(shapedRecipe.recipeCategory, shapedRecipe.result).unlockedBy(getHasName(shapedRecipe.unlockedBy), has(shapedRecipe.unlockedBy))
+                    .pattern(shapedRecipe.recipeTop)
+                    .pattern(shapedRecipe.recipeMiddle)
+                    .pattern(shapedRecipe.recipeBottom);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RAW_SAPPHIRE_BLOCK.get())
-                .pattern("SSS")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S', ModItems.RAW_SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.RAW_SAPPHIRE.get()), has(ModItems.RAW_SAPPHIRE.get()))
-                .save(consumer);
+            for(RecipeDefinition definition : shapedRecipe.recipeDefinitions) {
+                newRecipe.define(definition.character, definition.itemLike);
+            }
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_SAPPHIRE.get(), 9)
-                .requires(ModBlocks.RAW_SAPPHIRE_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.RAW_SAPPHIRE_BLOCK.get()), has(ModBlocks.RAW_SAPPHIRE_BLOCK.get()))
-                .save(consumer);
+            newRecipe.save(consumer);
+        }
     }
 }

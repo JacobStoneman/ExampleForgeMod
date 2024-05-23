@@ -1,6 +1,6 @@
-package net.klepto.testmod.datagen;
+package net.klepto.utils.datagen;
 
-import net.klepto.testmod.block.ModBlocks;
+import net.klepto.utils.ModConfig;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -8,16 +8,15 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockStateGenerator extends BlockStateProvider {
-    public ModBlockStateGenerator(PackOutput output, String modid, ExistingFileHelper exFileHelper) {
-        super(output, modid, exFileHelper);
+    public ModBlockStateGenerator(PackOutput output, ExistingFileHelper exFileHelper) {
+        super(output, ModConfig.MOD_ID, exFileHelper);
     }
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
-        blockWithItem(ModBlocks.RAW_SAPPHIRE_BLOCK);
-        blockWithItem(ModBlocks.SAPPHIRE_ORE);
-        blockWithItem(ModBlocks.SOUND_BLOCK);
+        for(RegistryObject<Block> blockWithItemState : ModConfig.BLOCK_WITH_ITEM_STATES) {
+            blockWithItem(blockWithItemState);
+        }
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

@@ -1,6 +1,6 @@
 package net.klepto.testmod.item.custom;
 
-import net.klepto.utils.ModTags;
+import net.klepto.utils.tags.ModTags;
 import net.klepto.utils.Output;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;

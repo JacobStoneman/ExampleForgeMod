@@ -1,7 +1,7 @@
-package net.klepto.testmod.datagen.loot;
+package net.klepto.utils.datagen.loot;
 
-import net.klepto.testmod.block.ModBlocks;
-import net.klepto.testmod.item.ModItems;
+import net.klepto.utils.ModConfig;
+import net.klepto.utils.custom.blocks.OreBlock;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -23,11 +23,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
-        this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
-        this.dropSelf(ModBlocks.SOUND_BLOCK.get());
+        for(RegistryObject<Block> dropSelfBlock : ModConfig.BLOCK_DROP_SELF_TABLES) {
+            this.dropSelf(dropSelfBlock.get());
+        }
 
-        this.add(ModBlocks.SAPPHIRE_ORE.get(), block -> createOreDrops(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get(), 2, 5));
+        for(RegistryObject<Block> oreBlockReg : ModConfig.ORE_BLOCK_TABLES) {
+            OreBlock oreBlock = (OreBlock) oreBlockReg.get();
+            this.add(oreBlock, block -> createOreDrops(oreBlock, oreBlock.oreDrop.get(), oreBlock.dropRange.getMinValue(), oreBlock.dropRange.getMaxValue()));
+        }
     }
 
     protected LootTable.Builder createOreDrops(Block pBlock, Item item, int min, int max) {
@@ -40,6 +43,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return ModConfig.KNOWN_BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 }

@@ -10,6 +10,16 @@
   "block.test_mod.sapphire_ore": "Sapphire Ore",
   "block.test_mod.sound_block": "Sound Block",
 
+  "block.test_mod.sapphire_stairs": "Sapphire Stairs",
+  "block.test_mod.sapphire_slab": "Sapphire Slab",
+  "block.test_mod.sapphire_button": "Sapphire Button",
+  "block.test_mod.sapphire_pressure_plate": "Sapphire Pressure Plate",
+  "block.test_mod.sapphire_fence": "Sapphire Fence",
+  "block.test_mod.sapphire_fence_gate": "Sapphire Fence Gate",
+  "block.test_mod.sapphire_wall": "Sapphire Wall",
+  "block.test_mod.sapphire_door": "Sapphire Door",
+  "block.test_mod.sapphire_trapdoor": "Sapphire Trapdoor",
+
   "creativetab.test_tab": "Test Tab",
 
   "tooltip.test_mod:metal_detector": "Finds valuables underground"

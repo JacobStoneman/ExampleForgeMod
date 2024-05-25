@@ -23,8 +23,8 @@ public class ModConfig {
     public static DeferredRegister<Block> KNOWN_BLOCKS = ModBlocks.BLOCKS;
 
     ///ITEM/BLOCK GENERATION
-    //Generates data for simple items
-    public static List<RegistryObject<Item>> SIMPLE_ITEMS = List.of(
+    //Generates data for textured items
+    public static List<RegistryObject<Item>> TEXTURED_ITEMS = List.of(
             ModItems.SAPPHIRE,
             ModItems.RAW_SAPPHIRE,
             ModItems.METAL_DETECTOR,
@@ -38,6 +38,51 @@ public class ModConfig {
             ModBlocks.RAW_SAPPHIRE_BLOCK,
             ModBlocks.SAPPHIRE_ORE,
             ModBlocks.SOUND_BLOCK
+    );
+
+    //Generates data for doors
+    public static List<RegistryObject<Block>> DOORS = List.of(
+            ModBlocks.SAPPHIRE_DOOR
+    );
+
+    //Generates data for trapdoors
+    public static List<RegistryObject<Block>> TRAP_DOORS = List.of(
+            ModBlocks.SAPPHIRE_TRAPDOOR
+    );
+
+    //Generates data for fences
+    public static List<RegistryObject<Block>> FENCE_BLOCKS = List.of(
+            ModBlocks.SAPPHIRE_FENCE
+    );
+
+    //Generates data for fence gates
+    public static List<RegistryObject<Block>> FENCE_GATE_BLOCKS = List.of(
+            ModBlocks.SAPPHIRE_FENCE_GATE
+    );
+
+    //Generates data for stairs
+    public static List<RegistryObject<Block>> STAIR_BLOCKS = List.of(
+            ModBlocks.SAPPHIRE_STAIRS
+    );
+
+    //Generates data for slabs
+    public static List<RegistryObject<Block>> SLAB_BLOCKS = List.of(
+            ModBlocks.SAPPHIRE_SLAB
+    );
+
+    //Generates data for buttons
+    public static List<RegistryObject<Block>> BUTTON_BLOCKS = List.of(
+            ModBlocks.SAPPHIRE_BUTTON
+    );
+
+    //Generates data for pressure plates
+    public static List<RegistryObject<Block>> PRESSURE_PLATE_BLOCKS = List.of(
+            ModBlocks.SAPPHIRE_PRESSURE_PLATE
+    );
+
+    //Generates data for walls
+    public static List<RegistryObject<Block>> WALL_BLOCKS = List.of(
+            ModBlocks.SAPPHIRE_WALL
     );
 
     ///LOOT TABLES

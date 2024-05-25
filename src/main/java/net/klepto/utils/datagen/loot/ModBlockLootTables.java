@@ -1,5 +1,6 @@
 package net.klepto.utils.datagen.loot;
 
+import net.klepto.testmod.block.ModBlocks;
 import net.klepto.utils.ModConfig;
 import net.klepto.utils.custom.blocks.OreBlock;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -31,6 +32,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
             OreBlock oreBlock = (OreBlock) oreBlockReg.get();
             this.add(oreBlock, block -> createOreDrops(oreBlock, oreBlock.oreDrop.get(), oreBlock.dropRange.getMinValue(), oreBlock.dropRange.getMaxValue()));
         }
+
+        //TODO: Remove dependency on mod files
+        this.dropSelf(ModBlocks.SAPPHIRE_STAIRS.get());
+        this.dropSelf(ModBlocks.SAPPHIRE_BUTTON.get());
+        this.dropSelf(ModBlocks.SAPPHIRE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.SAPPHIRE_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.SAPPHIRE_FENCE.get());
+        this.dropSelf(ModBlocks.SAPPHIRE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.SAPPHIRE_WALL.get());
+
+        this.add(ModBlocks.SAPPHIRE_SLAB.get(), block -> createSlabItemTable(ModBlocks.SAPPHIRE_SLAB.get()));
+        this.add(ModBlocks.SAPPHIRE_DOOR.get(), block -> createDoorTable(ModBlocks.SAPPHIRE_DOOR.get()));
     }
 
     protected LootTable.Builder createOreDrops(Block pBlock, Item item, int min, int max) {

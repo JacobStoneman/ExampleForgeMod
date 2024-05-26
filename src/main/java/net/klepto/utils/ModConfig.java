@@ -8,6 +8,7 @@ import net.klepto.utils.tags.ModTags;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,6 +19,7 @@ import java.util.List;
 public class ModConfig {
     //Mod id must match id in gradle properties
     public static final String MOD_ID = "test_mod";
+    public static ItemLike CREATIVE_TAB_IMAGE = ModItems.SAPPHIRE.get();
 
     //Link to the mods blocks register
     public static DeferredRegister<Block> KNOWN_BLOCKS = ModBlocks.BLOCKS;

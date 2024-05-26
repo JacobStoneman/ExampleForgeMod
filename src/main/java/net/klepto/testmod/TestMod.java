@@ -2,7 +2,7 @@ package net.klepto.testmod;
 
 import com.mojang.logging.LogUtils;
 import net.klepto.testmod.block.ModBlocks;
-import net.klepto.testmod.item.ModCreativeModeTabs;
+import net.klepto.utils.ModCreativeModeTabs;
 import net.klepto.testmod.item.ModItems;
 import net.klepto.utils.ModConfig;
 import net.minecraftforge.api.distmarker.Dist;

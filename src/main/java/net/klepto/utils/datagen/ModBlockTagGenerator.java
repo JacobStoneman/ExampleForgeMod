@@ -1,6 +1,6 @@
 package net.klepto.utils.datagen;
 
-import net.klepto.testmod.block.ModBlocks;
+import net.klepto.examplemod.block.ModBlocks;
 import net.klepto.utils.tags.CustomBlockTag;
 import net.klepto.utils.ModConfig;
 import net.minecraft.core.HolderLookup;

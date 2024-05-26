@@ -1,7 +1,7 @@
 package net.klepto.utils;
 
-import net.klepto.testmod.block.ModBlocks;
-import net.klepto.testmod.item.ModItems;
+import net.klepto.examplemod.block.ModBlocks;
+import net.klepto.examplemod.item.ModItems;
 import net.klepto.utils.recipes.*;
 import net.klepto.utils.tags.CustomBlockTag;
 import net.klepto.utils.tags.ModTags;
@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ModConfig {
     //Mod id must match id in gradle properties
-    public static final String MOD_ID = "test_mod";
+    public static final String MOD_ID = "example_mod";
     public static ItemLike CREATIVE_TAB_IMAGE = ModItems.SAPPHIRE.get();
 
     //Link to the mods blocks register

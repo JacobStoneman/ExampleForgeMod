@@ -1,0 +1,7 @@
+// 1.20.1	2024-05-26T21:01:40.1929128	Tags for minecraft:block mod id example_mod
+bcea9c5a4943923de4745678c97ef8bcff8d9e85 data/example_mod/tags/blocks/metal_detector_valuables.json
+f6168a08130f28abfa06838136a3c03109babf2e data/minecraft/tags/blocks/fences.json
+d124237da0f95e99b6e3dc7a00578d0c9ea21f1e data/minecraft/tags/blocks/fence_gates.json
+f32f13c109f31d59a61db1c8b5ea0bc7375231c5 data/minecraft/tags/blocks/mineable/pickaxe.json
+f32f13c109f31d59a61db1c8b5ea0bc7375231c5 data/minecraft/tags/blocks/needs_iron_tool.json
+afef148a0529aa65c4b1db58858ee1266700d3d9 data/minecraft/tags/blocks/walls.json

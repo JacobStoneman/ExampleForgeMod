@@ -1,0 +1,26 @@
+{
+  "creativetab.mod_tab": "Example Mod Tab",
+
+  "item.example_mod.sapphire": "Sapphire",
+  "item.example_mod.raw_sapphire": "Raw Sapphire",
+  "item.example_mod.strawberry": "Strawberry",
+  "item.example_mod.pine_cone": "Pine Cone",
+  "item.example_mod.metal_detector": "Metal Detector",
+
+  "block.example_mod.sapphire_block": "Block of Sapphire",
+  "block.example_mod.raw_sapphire_block": "Block of Raw Sapphire",
+  "block.example_mod.sapphire_ore": "Sapphire Ore",
+  "block.example_mod.sound_block": "Sound Block",
+
+  "block.example_mod.sapphire_stairs": "Sapphire Stairs",
+  "block.example_mod.sapphire_slab": "Sapphire Slab",
+  "block.example_mod.sapphire_button": "Sapphire Button",
+  "block.example_mod.sapphire_pressure_plate": "Sapphire Pressure Plate",
+  "block.example_mod.sapphire_fence": "Sapphire Fence",
+  "block.example_mod.sapphire_fence_gate": "Sapphire Fence Gate",
+  "block.example_mod.sapphire_wall": "Sapphire Wall",
+  "block.example_mod.sapphire_door": "Sapphire Door",
+  "block.example_mod.sapphire_trapdoor": "Sapphire Trapdoor",
+
+  "tooltip.example_mod:metal_detector": "Finds valuables underground"
+}

@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "example_mod:item/sapphire_staff_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "example_mod:item/sapphire_staff_2d"
+    },
+    "ground": {
+      "parent": "example_mod:item/sapphire_staff_2d"
+    },
+    "fixed": {
+      "parent": "example_mod:item/sapphire_staff_2d"
+    }
+  }
+}

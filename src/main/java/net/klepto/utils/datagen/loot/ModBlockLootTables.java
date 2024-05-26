@@ -1,6 +1,6 @@
 package net.klepto.utils.datagen.loot;
 
-import net.klepto.testmod.block.ModBlocks;
+import net.klepto.examplemod.block.ModBlocks;
 import net.klepto.utils.ModConfig;
 import net.klepto.utils.custom.blocks.OreBlock;
 import net.minecraft.data.loot.BlockLootSubProvider;
